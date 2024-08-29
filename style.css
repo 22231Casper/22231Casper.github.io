@@ -218,9 +218,9 @@ div > button {
     width: 100%;
 }
 
-#back.button {
-    position: absolute;
-    left: 50px;
+#back-button {
+    position: relative;
+    left: 10%;
     top: 100px;
 }
 
