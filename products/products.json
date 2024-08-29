@@ -124,11 +124,11 @@
         {
             "productName": "Thom",
             "imageName": "Thom.jpg",
-            "description": "Thomas French Person, taken by someone",
+            "description": "Thomas French Person, photo taken by Tom.",
             "price": 25000,
             "link": "thom.html",
             "featured": true,
-            "clicks": 0,
+            "clicks": 10,
             "new": false,
             "popular": false
         },
@@ -203,7 +203,7 @@
             "imageName": "Pain.jpg",
             "description": "A diagram given by Noah to express his opinion on being a Product Manager.",
             "price": 250,
-            "link": "noah's-xray.html",
+            "link": "noah's-diagram.html",
             "featured": false,
             "clicks": 0,
             "new": false,
