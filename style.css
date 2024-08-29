@@ -194,7 +194,7 @@ a:hover {
     font-size: inherit;
 }
 
-.button > *, button > * {
+.button *, button * {
     color: var(--white);
 }
 
