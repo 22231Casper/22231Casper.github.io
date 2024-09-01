@@ -219,9 +219,10 @@ div > button {
 }
 
 #back-button {
-    position: relative;
-    left: 10%;
-    top: 100px;
+    position: absolute;
+    text-align: left;
+    left: 50px;
+    top: 120px;
 }
 
 /* Nav section */

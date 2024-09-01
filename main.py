@@ -61,8 +61,6 @@ def generateProductDisplays():
     countDracula = 0
 
     with open("templates/productDisplay.html") as templateFile, open("templates/products.html", "w") as productsTemplate:
-        print("<!-- Make change here -->", file=productsTemplate)
-        
         # Load the products file into a dictionary
         products = getProducts()
 
@@ -90,8 +88,6 @@ def generateProductDisplays():
         
         if not countDracula % 3 == 0:
             print("</div>", file=productsTemplate)
-
-    print(Fore.YELLOW + "Please make a change in the templates/products.html file to save it" + Fore.WHITE)
 
 # Generate links in the json
 def generateLinks():
@@ -122,24 +118,24 @@ def deleteOldPages():
                 os.remove(f"products/{page}")
 # 🇬🇧
 # Check if new pages need to be made in order for replit to recognize them
-def checkPages():
-    print("Checking pages...")
-    productPages = os.listdir("products/")
-    
-    products = getProducts()
-    
-    for product in products:
-        pageFound = False
-        
-        for page in productPages:
-            if product["link"] == page:
-                pageFound = True
-
-        if not pageFound:
-            print("-"*50)
-            print("Please make a new page called:")
-            print(product["link"])
-            input("Press enter to continue...")
+# def checkPages():
+#     print("Checking pages...")
+#     productPages = os.listdir("products/")
+#     
+#     products = getProducts()
+#     
+#     for product in products:
+#         pageFound = False
+#         
+#         for page in productPages:
+#             if product["link"] == page:
+#                 pageFound = True
+# 
+#         if not pageFound:
+#             print("-"*50)
+#             print("Please make a new page called:")
+#             print(product["link"])
+#             input("Press enter to continue...")
 
 # Add new products to the json
 def addProduct():
@@ -298,7 +294,7 @@ def guff():
 def stuff():
     print("Doing stuff...")
     generateLinks()
-    checkPages()
+    # checkPages()
     makePages()
     generateProductDisplays()
     deleteOldPages()
