@@ -40,6 +40,7 @@ function updateCartDisplay() {
             updateCartTotal(cartTotal);
         });
     });
+    updateCartNumDisplays();
 }
 
 updateCartDisplay();

@@ -89,16 +89,15 @@ function CBDisplaysInit() {
 
 // Cart
 function cartNumDisplaysInit() {
+    cartNumDisplays = document.getElementsByClassName("cartNumDisplay");
     if (!localStorage.getItem("cart")) {
         resetCart();
     }
-    cartNumDisplays = document.getElementsByClassName("cartNumDisplay");
     updateCartNumDisplays();
 }
 
 function resetCart() {
     localStorage.setItem("cart", JSON.stringify([]));
-    updateCartNumDisplays();
 }
 
 function getCart() {
@@ -289,8 +288,9 @@ function changeMode(mode) {
 
     let colours = [];
 
-    if (mode == 0) {
+    if (!mode) {
         colours = lightColours;
+        mode = 0
     } else if (mode == 1) {
         colours = darkColours;
     } else if (mode == 2) {
@@ -319,10 +319,10 @@ function main() {
 
     // Change to preffered mode
     let mode = localStorage.getItem("mode");
-    if (mode == undefined) {
-        mode = 0;;
+    if (!mode) {
+        mode = 0;
     }
-    changeMode(localStorage.getItem("mode"));
+    changeMode(mode);
 
     // Change all delay_name scripts to actual scripts
     var allScripts = document.getElementsByTagName("script");
