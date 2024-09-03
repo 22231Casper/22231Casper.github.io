@@ -500,11 +500,12 @@ button.yarg:hover {
 }
 
 /* Crucifix */
-.crucifix {
+#crucifix {
     height: 100%;
     width: 50%;
     position: fixed;
     z-index: 3;
+    display: none;
 }
 
 /* The cart popup */
@@ -513,7 +514,7 @@ button.yarg:hover {
     position: fixed;
     right: 50px;
     top: 120px;
-    padding: 50px;
-    border-radius: 25px;
+    padding: 20px;
+    border-radius: 10px;
     background-color: var(--light);
 }

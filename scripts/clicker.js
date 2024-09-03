@@ -19,9 +19,11 @@ function exorcism() {
         setTimeout(function() {evilIn = -1;}, 750);
         setTimeout(function() {evilIn = -1;}, 1000);
         playSound("whip");
+        let crucifix = document.getElementById("crucifix");
+        crucifix.style.display = "block";
         let prankSounds = ["prank", "prank2", "prank3"];
         let prankSound = prankSounds[Math.floor(Math.random()*prankSounds.length)]
-        setTimeout(function() {playSound(prankSound);}, 2000);
+        setTimeout(function() {playSound(prankSound); crucifix.style.display = "none";}, 2000);
     }
 }
 
