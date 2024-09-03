@@ -318,7 +318,11 @@ function main() {
     cartNumDisplaysInit();
 
     // Change to preffered mode
-    changeMode(localStorage.getItem("mode"))
+    let mode = localStorage.getItem("mode");
+    if (mode == undefined) {
+        mode = 0;;
+    }
+    changeMode(localStorage.getItem("mode"));
 
     // Change all delay_name scripts to actual scripts
     var allScripts = document.getElementsByTagName("script");
