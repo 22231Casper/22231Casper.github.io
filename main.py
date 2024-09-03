@@ -1,6 +1,5 @@
 import json
 import os
-from colorama import Fore
 
 print("Starting main...")
 
@@ -306,12 +305,12 @@ def stuff():
 running = True
 
 # Print the welcome message
-print(Fore.GREEN + "Welcome to CappaOS Lite!" + Fore.WHITE)
+print("Welcome to CappaOS Lite!")
 print("Type 'stuff()' to do stuff")
 
 while True:
     if not running:
         break
     
-    print(Fore.WHITE + "-"*50)
+    print("-"*50)
     exec(input("} "))

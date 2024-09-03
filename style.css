@@ -505,3 +505,10 @@ button.yarg:hover {
     width: 50%;
     position: fixed;
 }
+
+/* the cart popup */
+#cartPopup {
+    position: fixed;
+    margin-right: 10%;
+    margin-top: 500px;
+}

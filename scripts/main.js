@@ -116,6 +116,13 @@ function addToCart(productName) {
     // Update local storage
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    let cartPopup = document.getElementById("cartPopup")
+    cartPopup.style.display = "block"
+
+    setTimeout(function() {
+        cartPopup.style.display = "none"
+    }, 10000);
+
     updateCartNumDisplays();
 }
 
