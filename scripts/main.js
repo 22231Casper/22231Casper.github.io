@@ -288,12 +288,11 @@ function changeMode(mode) {
 
     let colours = [];
 
-    if (!mode) {
+    if (mode == "light") {
         colours = lightColours;
-        mode = 0
-    } else if (mode == 1) {
+    } else if (mode == "dark") {
         colours = darkColours;
-    } else if (mode == 2) {
+    } else if (mode == "yup") {
         colours = lowContrast;
     } else {
         console.log("Invalid mode");
@@ -320,7 +319,7 @@ function main() {
     // Change to preffered mode
     let mode = localStorage.getItem("mode");
     if (!mode) {
-        mode = 0;
+        mode = "light";
     }
     changeMode(mode);
 
