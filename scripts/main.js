@@ -125,7 +125,7 @@ function removeFromCart(productName) {
 
     for (let i = 0; i < cart.length; i++) {
         if (cart[i] == productName) {
-            continue;
+            break;
         }
         newCart.push(cart[i]);
     }
@@ -276,7 +276,7 @@ function changeMode(mode) {
     
     let lightColours = ["#FFFFFF", "#696969", "#424242", "#000000", "#ECEEFE", "#D4DEFF", "#5061FF", "#4051DF"];
     
-    let darkColours =  ["#000000", "#696969", "#424242", "#FFFFFF", "#5061FF", "#4051DF", "#ECEEFE", "#D4DEFF"];
+    let darkColours =  ["#000000", "#696969", "#424242", "#FFFFFF", "#29369C", "#1D2567", "#29369C", "#1D2567"];
 
     let lowContrast =  ["#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000"];
 
@@ -290,7 +290,6 @@ function changeMode(mode) {
         colours = lowContrast;
     } else {
         console.log("Invalid mode");
-        changeMode(0);
     }
     
     // set css variable
