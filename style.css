@@ -509,8 +509,11 @@ button.yarg:hover {
 
 /* The cart popup */
 #cartPopup {
-    display: block;
+    display: none;
     position: fixed;
     right: 50px;
-    top: 500px;
+    top: 120px;
+    padding: 50px;
+    border-radius: 25px;
+    background-color: var(--light);
 }
