@@ -300,10 +300,12 @@ function changeMode(mode) {
     }
     
     // set css variable
-    root.style.setProperty('--white', '#000000');
     for (let i = 0; i < keys.length; i++) {
         root.style.setProperty(keys[i], colours[i]);
     }
+
+    // update localStorage
+    localStorage.setItem("mode", mode)
 }
 
 // The main function that runs on every page
@@ -314,6 +316,9 @@ function main() {
     // Initialise displays
     CBDisplaysInit();
     cartNumDisplaysInit();
+
+    // Change to preffered mode
+    changeMode(localStorage.getItem("mode"))
 
     // Change all delay_name scripts to actual scripts
     var allScripts = document.getElementsByTagName("script");

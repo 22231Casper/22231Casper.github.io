@@ -504,11 +504,13 @@ button.yarg:hover {
     height: 100%;
     width: 50%;
     position: fixed;
+    z-index: 3;
 }
 
-/* the cart popup */
+/* The cart popup */
 #cartPopup {
+    display: block;
     position: fixed;
-    margin-right: 10%;
-    margin-top: 500px;
+    right: 50px;
+    top: 500px;
 }
