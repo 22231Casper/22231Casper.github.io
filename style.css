@@ -35,6 +35,7 @@ body {
     margin-top: 112px;
     margin-bottom: 0px;
     display: flex;
+    flex-direction: column;
 }
 
 body > *:not(nav) {
