@@ -128,10 +128,12 @@ function addToCart(productName) {
 function removeFromCart(productName) {
     var cart = getCart();
     var newCart = [];
+    let stillSearching = true
 
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i] == productName) {
-            break;
+        if (cart[i] == productName && stillSearching) {
+            stillSearching = false
+            continue;
         }
         newCart.push(cart[i]);
     }
