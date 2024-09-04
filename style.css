@@ -34,6 +34,7 @@ body {
     margin-right: 0px;
     margin-top: 112px;
     margin-bottom: 0px;
+    min-height: 2000;
 }
 
 body > *:not(nav, footer) {
@@ -506,6 +507,7 @@ button.yarg:hover {
     position: fixed;
     z-index: 3;
     display: none;
+    margin: auto auto;
 }
 
 /* The cart popup */
