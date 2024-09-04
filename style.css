@@ -34,10 +34,10 @@ body {
     margin-right: 0px;
     margin-top: 112px;
     margin-bottom: 0px;
-    min-height: 2000;
+    display: flex;
 }
 
-body > *:not(nav, footer) {
+body > *:not(nav) {
     margin: 25px auto;
 }
 
@@ -417,7 +417,7 @@ div:has(.cartItem) :last-child {
 
 /* Footer */
 footer {
-    margin: 0px 0px;
+    margin: auto 0px 0px 0px;
     padding: 50px;
     background-color: var(--light);
     display: flex;
@@ -507,7 +507,8 @@ button.yarg:hover {
     position: fixed;
     z-index: 3;
     display: none;
-    margin: auto auto;
+    top: 0px;
+    left: 50%;
 }
 
 /* The cart popup */
