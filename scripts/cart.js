@@ -2,7 +2,7 @@ function updateCartDisplay() {
     let cartDisplay = document.getElementById("cartDisplay");
     let cart = getCart();
 
-    if (cart.length = 0 || cart.length == undefined) {
+    if (cart == undefined) {
         console.log("Nothing in cart");
         cartTotal = 0;
         updateCartTotal(cartTotal);
