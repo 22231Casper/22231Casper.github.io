@@ -1,5 +1,17 @@
 function updateCartDisplay() {
-    cart = getCart();
+    let cartDisplay = document.getElementById("cartDisplay");
+    let cart = getCart();
+
+    if (cart.length = 0 || cart.length == undefined) {
+        console.log("Nothing in cart");
+        cartTotal = 0;
+        updateCartTotal(cartTotal);
+        updateCartNumDisplays();
+        let emptyCart = document.createElement("p")
+        emptyCart.innerHTML = "Nothing in cart."
+        cartDisplay.appendChild(emptyCart);
+        return;
+    }
 
     var cartItems = [];
     cartTotal = 0;
@@ -13,7 +25,6 @@ function updateCartDisplay() {
         .then((res) => res.text())
         .then((jsonGuff) => {
             products = JSON.parse(jsonGuff)["products"];
-            let cartDisplay = document.getElementById("cartDisplay");
             // Remove all current children from cartDisplay
             while (cartDisplay.firstChild) {
                 cartDisplay.removeChild(cartDisplay.firstChild);
