@@ -54,4 +54,4 @@ function updateCartDisplay() {
     updateCartNumDisplays();
 }
 
-setTimeout(updateCartDisplay, 1000)
+setTimeout(updateCartDisplay, 1500)
