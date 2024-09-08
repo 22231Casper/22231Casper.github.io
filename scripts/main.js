@@ -341,7 +341,5 @@ function main() {
     }
 }
 
-// This event runs when the page has loaded
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(main, 500);
-});
+// Run main after a short timeout
+setTimeout(main, 500);
