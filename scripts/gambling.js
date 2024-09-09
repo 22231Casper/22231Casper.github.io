@@ -20,8 +20,11 @@ function slotMachine() {
         //iterates between slots;
         for (let h = 0; h < 2; h++) {
           //chance of changing;
-          if (Math.random() >= (0.3/(h+1))) {
+          let slotChance = Math.random()
+          console.log("Slot chance for slot " + h + " is " + slotChance)
+          if (slotChance >= (0.3/(h+1))) {
             slots[h] = (slots[h] + 1) % 10
+            console.log("Slot " + h + " has increased")
           }
         }//changes on screen;
         machine.innerHTML = (slots[0] + " " + slots[1] + " " + slots[2])
