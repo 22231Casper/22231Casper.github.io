@@ -126,8 +126,8 @@ function addToCart(productName) {
 }
 
 function removeFromCart(productName) {
-    var cart = getCart();
-    var newCart = [];
+    let cart = getCart();
+    let newCart = [];
     let stillSearching = true
 
     for (let i = 0; i < cart.length; i++) {
