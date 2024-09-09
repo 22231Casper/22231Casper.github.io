@@ -1,6 +1,7 @@
 var CBDisplays;
 var cartNumDisplays;
 var mode = "light";
+var buttonChecks = [];
 
 var sounds = {
     "click": new Audio("/audio/Better Clicker Sound.mp3"),
@@ -28,7 +29,36 @@ var sounds = {
 };
 
 class autoButton {
-    
+    constructor(elem, action, cost) {
+        this.elem = elem
+        this.action = action
+        this.cost = cost
+
+        this.elem.setAttribute("onclick", this.click)
+
+        buttonChecks.add(this.check)
+    }
+
+    click() {
+        if (getCB() >= this.price) {
+            setCB(-price)
+            this.action()
+            console.log("Ran the action")
+        } else {
+            console.log("Not enough moola")
+            playSound("boowomp")
+        }
+    }
+
+    check() {
+        if (getCB >= this.price) {
+            console.log("Has enough")
+            this.elem.classList.remove("disabled")
+        } else {
+            console.log("Doesn't have enough")
+            this.elem.classList.add("disabled")
+        }
+    }
 }
 
 function playSound(soundName) {
@@ -61,6 +91,11 @@ function evilNoise() {
 function updateCBDisplays() {
     for (let i = 0; i < CBDisplays.length; i++) {
         CBDisplays[i].innerHTML = "CB: $" + getCB();
+    }
+
+    console.log(buttonChecks)
+    for (let i = 0; i < buttonChecks.length; i++) {
+        buttonChecks[i]()
     }
 }
 
@@ -343,6 +378,8 @@ function main() {
             );
         }
     }
+
+    // Testing
 }
 
 // Run main
