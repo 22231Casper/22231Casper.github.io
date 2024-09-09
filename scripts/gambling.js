@@ -17,14 +17,17 @@ function slotMachine() {
     //iterates multiple times;
     for (let i = 0; i < 40; i++){
       setTimeout(function() {
+        //iterates between slots;
         for (let h = 0; h < 2; h++) {
-          if (Math.random() >= (0.8/h)) {
+          //chance of changing;
+          if (Math.random() >= (0.3/(h+1))) {
             slots[h] = (slots[h] + 1) % 10
           }
-        }//haMBYR;
+        }//changes on screen;
         machine.innerHTML = (slots[0] + " " + slots[1] + " " + slots[2])
       }, i*100);
     }
+    //win conditions after delay;
     setTimeout(function() {
       if (slots == [7, 7, 7]) {
         activateCoins();
