@@ -380,6 +380,19 @@ function main() {
     }
 
     // Testing
+    let button_one = new autoButton(document.getElementById("hundo-five"), but_one, 150)
+    let button_two = new autoButton(document.getElementById("five-sixteen"), but_two, 516)
+
+    console.log(button_one)
+    console.log(button_two)
+}
+
+function but_one() {
+    alert("bunger one")
+}
+
+function but_two() {
+    alert("ham two")
 }
 
 // Run main
