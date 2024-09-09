@@ -22,7 +22,7 @@ function slotMachine() {
           console.log("H is " + h)
           //chance of changing;
           let slotChance = Math.random()
-          if (slotChance >= (0.3/(h+1))) {
+          if (slotChance >= (0.5/(h+1))) {
             slots[h] = (slots[h] + 1) % 10
           }
         }//changes on screen;
