@@ -284,7 +284,7 @@ function changeMode(mode) {
     
     let lightColours = ["#FFFFFF", "#696969", "#424242", "#000000", "#ECEEFE", "#D4DEFF", "#5061FF", "#4051DF"];
     
-    let darkColours =  ["#000000", "#696969", "#424242", "#FFFFFF", "#29369C", "#1D2567", "#4966BC", "#3946B9C"];
+    let darkColours =  ["#000000", "#696969", "#424242", "#FFFFFF", "#29369C", "#1D2567", "#4956BC", "#3D4587"];
 
     let lowContrast =  ["#000000", "#000001", "#000002", "#000003", "#000003", "#000004", "#000005", "#000006"];
 
@@ -341,7 +341,5 @@ function main() {
     }
 }
 
-// This event runs when the page has loaded
-document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(main, 500);
-});
+// Run main after a short timeout
+setTimeout(main, 500);
