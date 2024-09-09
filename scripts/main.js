@@ -341,5 +341,5 @@ function main() {
     }
 }
 
-// Run main after a short timeout
-setTimeout(main, 500);
+// Run main
+main()
