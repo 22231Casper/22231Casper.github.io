@@ -1,32 +1,43 @@
-//variables
-var bet = 0;
-var slots = [0, 0, 0];
-var machine;
+//variables;
+var bet = 0
+var slots = [0, 0, 0]
+var machine
 
-//slotmachine
+//slotmachine;
+function randSlot() {
+  return Math.floor(Math.random() * 10)
+}
 
 function slotMachine() {
+  //cost;
   if (getCB() >= 100) {
-    changeCB(-100);
-    for(let i = 0; i < 40; i++){
-      setTimeout(function(){
-        machine.innerHTML = (slots[0] + " " + slots[1] + " " + slots[2]);
-        slots = [Math.floor(Math.random() * 10), Math.floor(Math.random() * 10), Math.floor(Math.random() * 10)];
-      }, 100*i);
+    changeCB(-100)
+    //random start;
+    slots = [randSlot(), randSlot(), randSlot()]
+    //iterates multiple times;
+    for (let i = 0; i < 40; i++){
+      setTimeout(function() {
+        for (let h = 0; h < 2; h++) {
+          if (Math.random() >= (0.8/h)) {
+            slots[h] = (slots[h] + 1) % 10
+          }
+        }//haMBYR;
+        machine.innerHTML = (slots[0] + " " + slots[1] + " " + slots[2])
+      }, i*100);
     }
-    setTimeout(function(){
-      if(slots == [7, 7, 7]) {
+    setTimeout(function() {
+      if (slots == [7, 7, 7]) {
         activateCoins();
         changeCB(9000000000000000);
-      }else if (slots[1] == slots[2] && slots[2] == slots[0]){
-        changeCB(getCB() * getCB());
-        playSound('prank2');
-      }else {
-        playSound('boowomp');
-      }}, 4000);
+      } else if (slots[1] == slots[2] && slots[2] == slots[0]){
+        changeCB(getCB() * getCB())
+        playSound('prank2')
+      } else {
+        playSound('boowomp')
+      }}, 4000)
   } else {
-    machine.innerHTML = ("poor lol");
+    machine.innerHTML = ("poor lol")
   }
 }
 
-setTimeout(function(){machine = document.getElementById("slots");}, 1000);
+setTimeout(function(){machine = document.getElementById("slots")}, 1000);

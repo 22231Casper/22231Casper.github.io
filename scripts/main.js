@@ -27,6 +27,10 @@ var sounds = {
     "holy": new Audio("/audio/holy.mp3")
 };
 
+class autoButton {
+    
+}
+
 function playSound(soundName) {
     let sound = sounds[soundName];
     sound.pause();
