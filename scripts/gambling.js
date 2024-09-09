@@ -18,7 +18,7 @@ function slotMachine() {
     for (let i = 0; i < 40; i++){
       setTimeout(function() {
         //iterates between slots;
-        for (let h = 0; h < 2; h++) {
+        for (let h = 0; h <= 2; h++) {
           //chance of changing;
           let slotChance = Math.random()
           console.log("Slot chance for slot " + h + " is " + slotChance)
