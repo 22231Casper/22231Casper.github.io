@@ -29,14 +29,15 @@ var sounds = {
 };
 
 class autoButton {
-    constructor(elem, action, cost) {
-        this.elem = elem
+    constructor(elemID, action, cost) {
+        this.elemID = elemID
+        this.elem = document.getElementById(elemID)
         this.action = action
         this.cost = cost
 
-        this.elem.setAttribute("onclick", this.click)
+        this.elem.setAttribute("onclick", elemID + ".click()")
 
-        buttonChecks.add(this.check)
+        buttonChecks.push(this)
     }
 
     click() {
@@ -58,6 +59,10 @@ class autoButton {
             console.log("Doesn't have enough")
             this.elem.classList.add("disabled")
         }
+    }
+
+    update() {
+        console.log("Update " + this.elemID)
     }
 }
 
@@ -95,7 +100,7 @@ function updateCBDisplays() {
 
     console.log(buttonChecks)
     for (let i = 0; i < buttonChecks.length; i++) {
-        buttonChecks[i]()
+        buttonChecks[i].check()
     }
 }
 
