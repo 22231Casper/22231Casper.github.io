@@ -385,8 +385,8 @@ function main() {
     }
 
     // Testing
-    let hundo_five = new autoButton(document.getElementById("hundo_five"), but_one, 150)
-    let five_sixteen = new autoButton(document.getElementById("five_sixteen"), but_two, 516)
+    let hundo_five = new autoButton("hundo_five", but_one, 150)
+    let five_sixteen = new autoButton("five_sixteen", but_two, 516)
 
     console.log(hundo_five)
     console.log(five_sixteen)
