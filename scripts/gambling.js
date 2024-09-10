@@ -32,15 +32,15 @@ function slotMachine() {
     setTimeout(function() {
       if (slots == [7, 7, 7]) {
         activateCoins();
-        changeCB(9000000000000000);
+        setCB(Infinity);
       } else if (slots[1] == slots[2] && slots[2] == slots[0]){
         changeCB(getCB() * getCB())
         playSound('prank2')
       } else if (slots[1] == slots[2] || slots[1] == slots[0]){
-        changeCB(getCB() * 3)
+        changeCB(getCB())
         playSound('prank2')
       } else if (slots[0] == slots[2]){
-        changeCB(getCB())
+        changeCB(1000)
         playSound('prank2')
       } else {
         playSound('boowomp')
