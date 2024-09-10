@@ -519,3 +519,9 @@ button.yarg:hover {
     border-radius: 10px;
     background-color: var(--light);
 }
+
+/* Box with a border */
+.box {
+    border-radius: 20px;
+    border: 5px solid var(--grey);
+}
