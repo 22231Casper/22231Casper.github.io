@@ -197,6 +197,10 @@ function buyProducts() {
     }
 }
 
+function holup(call) {
+    setTimeout(call, 500)
+}
+
 function removeAllFromCart() {
     resetCart();
     updateCartDisplay();
@@ -359,7 +363,7 @@ function main() {
     console.log("Main is running at " + page);
 
     // Initialise displays
-    CBDisplaysInit();
+    holup(CBDisplaysInit)
     cartNumDisplaysInit();
 
     // Change to preffered mode
