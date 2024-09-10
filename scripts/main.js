@@ -1,6 +1,7 @@
 var CBDisplays;
 var cartNumDisplays;
 var mode = "light";
+var buttonChecks = [];
 
 var sounds = {
     "click": new Audio("/audio/Better Clicker Sound.mp3"),
@@ -28,7 +29,41 @@ var sounds = {
 };
 
 class autoButton {
-    
+    constructor(elemID, action, cost) {
+        this.elemID = elemID
+        this.elem = document.getElementById(elemID)
+        this.action = action
+        this.cost = cost
+
+        this.elem.setAttribute("onclick", elemID + ".click()")
+
+        buttonChecks.push(this)
+    }
+
+    click() {
+        if (getCB() >= this.price) {
+            setCB(-price)
+            this.action()
+            console.log("Ran the action")
+        } else {
+            console.log("Not enough moola")
+            playSound("boowomp")
+        }
+    }
+
+    check() {
+        if (getCB >= this.price) {
+            console.log("Has enough")
+            this.elem.classList.remove("disabled")
+        } else {
+            console.log("Doesn't have enough")
+            this.elem.classList.add("disabled")
+        }
+    }
+
+    update() {
+        console.log("Update " + this.elemID)
+    }
 }
 
 function playSound(soundName) {
@@ -61,6 +96,11 @@ function evilNoise() {
 function updateCBDisplays() {
     for (let i = 0; i < CBDisplays.length; i++) {
         CBDisplays[i].innerHTML = "CB: $" + getCB();
+    }
+
+    console.log(buttonChecks)
+    for (let i = 0; i < buttonChecks.length; i++) {
+        buttonChecks[i].check()
     }
 }
 
@@ -156,6 +196,10 @@ function buyProducts() {
         }
         removeAllFromCart();
     }
+}
+
+function holup(call) {
+    setTimeout(call, 500)
 }
 
 function removeAllFromCart() {
@@ -322,7 +366,7 @@ function main() {
     console.log("Main is running at " + page);
 
     // Initialise displays
-    CBDisplaysInit();
+    holup(CBDisplaysInit)
     cartNumDisplaysInit();
 
     // Change to preffered mode
@@ -346,6 +390,21 @@ function main() {
             );
         }
     }
+
+    // Testing
+    let hundo_five = new autoButton("hundo_five", but_one, 150)
+    let five_sixteen = new autoButton("five_sixteen", but_two, 516) 
+
+    console.log(hundo_five)
+    console.log(five_sixteen)
+}
+
+function but_one() {
+    alert("bunger one")
+}
+
+function but_two() {
+    alert("ham two")
 }
 
 // Run main
