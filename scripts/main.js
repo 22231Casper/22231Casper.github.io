@@ -59,11 +59,6 @@ function updateCBDisplays() {
     for (let i = 0; i < CBDisplays.length; i++) {
         CBDisplays[i].innerHTML = "CB: $" + getCB();
     }
-
-    console.log(buttonChecks)
-    for (let i = 0; i < buttonChecks.length; i++) {
-        buttonChecks[i].check()
-    }
 }
 
 // Return the current amount of CappaBucks
