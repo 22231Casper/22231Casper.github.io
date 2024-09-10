@@ -148,10 +148,11 @@ function removeFromCart(productName) {
 
 function buyProducts() {
     if (check(cartTotal)) {
-        playSound("buy");
         changeCB(-cartTotal);
-        for (let i = 0; i < getCart().length; i++) {
-            download(getCart()[i]);
+        playSound("buy");
+        let cart = getCart();
+        for (let i = 0; i < cart.length; i++) {
+            setTimeout(function() {download(cart[i]);}, 500)
         }
         removeAllFromCart();
     }
@@ -226,8 +227,8 @@ function activateCoins() {
     let coinNames = ["burger-coin.png", "coin.png", "coin2.png", "dabloon.png", "happy-coin.png", "big money.jpg", "gfgfg.jpg", "nfhf.jpg", "cart.jpg", "ai.webp", "gggggg.png", "ffffff.webp", "sash.webp"];
 
     let totalTime = 3; // In seconds
-    let totalCoins = 100;
-    // Make a few coins on the page using random coin names
+    let totalCoins = 100; // Spawn 100 coins
+    // Make *a few* coins on the page using random coin names
     for (let i = 0; i < totalCoins; i++) {
         setTimeout(function() {makeCoin("/images/coin/" + coinNames[Math.floor(Math.random() * coinNames.length)]);}
                    , (i-1) * totalTime*1000/totalCoins);
@@ -235,8 +236,6 @@ function activateCoins() {
 }
 
 function makeCoin(coinName) {
-    let coin = document.createElement("img");
-    
     let x = Math.floor(Math.random() * 100);
     let y = -25;
     let xv = Math.random() - 0.5;
@@ -248,15 +247,19 @@ function makeCoin(coinName) {
     if (coinName == undefined) {
         coinName = "/images/coin/coin.png";
     }
+
+    let coin = document.createElement("img");
+    
     coin.src = coinName;
     coin.classList.add("coin");
+    coin.style.top = "-69%"
     document.body.appendChild(coin);
     
     let coinInterval = setInterval(function () {
         // Collision left and right
-        if (x > 100 || x < 0) {
+        /*if (x > 100 || x < 0) {
             xv *= -1 - boingus;
-        }
+        }*.
 
         // Collision for the ground
         /*if (y > 100) {

@@ -19,7 +19,6 @@ function slotMachine() {
       setTimeout(function() {
         //iterates between slots;
         for (let h = 0; h <= 2; h++) {
-          console.log("H is " + h)
           //chance of changing;
           let slotChance = Math.random()
           if (slotChance >= (0.5/(h+1))) {
@@ -36,6 +35,12 @@ function slotMachine() {
         changeCB(9000000000000000);
       } else if (slots[1] == slots[2] && slots[2] == slots[0]){
         changeCB(getCB() * getCB())
+        playSound('prank2')
+      } else if (slots[1] == slots[2] || slots[1] == slots[0]){
+        changeCB(getCB() * 3)
+        playSound('prank2')
+      } else if (slots[0] == slots[2]){
+        changeCB(getCB())
         playSound('prank2')
       } else {
         playSound('boowomp')
