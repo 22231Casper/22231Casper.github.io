@@ -512,6 +512,7 @@ button.yarg:hover {
     display: none;
     top: 0px;
     left: 25%;
+    pointer-events: none;
 }
 
 /* The cart popup */

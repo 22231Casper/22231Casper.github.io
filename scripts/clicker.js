@@ -5,6 +5,7 @@ var removeEvil;
 var upgradePrice = 100;
 var perclick = 1;
 var evilIn = -1;
+var freaky = 0;
 
 // variables ^^^
 
@@ -24,6 +25,10 @@ function exorcism() {
         let prankSounds = ["prank", "prank2", "prank3"];
         let prankSound = prankSounds[Math.floor(Math.random()*prankSounds.length)]
         setTimeout(function() {playSound(prankSound); crucifix.style.display = "none";}, 2000);
+        freaky += 1;
+        if (freaky == 10) {
+
+        }
     }
 }
 
@@ -110,6 +115,7 @@ function init() {
     clickerButton = document.getElementById("clickerButton");
     upgradeButton = document.getElementById("buyButton");
     removeEvil = document.getElementById("removeEvil");
+    freakButton = document.getElementById("freakButton")
     priceCheck();
 }
 

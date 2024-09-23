@@ -34,17 +34,21 @@ function slotMachine() {
         activateCoins();
         setCB(Infinity);
       } else if (slots[1] == slots[2] && slots[2] == slots[0]){
-        changeCB(getCB() * getCB())
+        changeCB((getCB() * getCB())/1000 + 1000000)
         playSound('prank2')
       } else if (slots[1] == slots[2] || slots[1] == slots[0]){
-        changeCB(getCB())
+        changeCB(getCB()/10 + 100000)
         playSound('prank2')
       } else if (slots[0] == slots[2]){
         changeCB(1000)
         playSound('prank2')
+      } else if (slots == [0, 0, 0]) {
+        setCB(getCB()/1000)
+        playSound('prank1')
       } else {
         playSound('boowomp')
-      }}, 4000)
+      }
+    }, 4000)
   } else {
     machine.innerHTML = ("poor lol")
   }
