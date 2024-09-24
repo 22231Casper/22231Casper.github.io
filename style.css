@@ -504,7 +504,7 @@ button.yarg:hover {
 }
 
 /* Crucifix */
-#crucifix {
+.crucifix {
     height: 100%;
     width: 50%;
     position: fixed;

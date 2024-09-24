@@ -52,8 +52,7 @@ function activateFreak() {
         let freakImage = document.createElement("img");
         freakImage.src = "/images/Freaky Casper.png";
         freakImage.class = "crucifix";
-        freakImage.style = "";
-        document.appendChild(freakImage);
+        navButton.appendChild(freakImage);
     }, 3000)
 }
 
