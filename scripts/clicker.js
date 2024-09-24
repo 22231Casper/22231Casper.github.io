@@ -34,7 +34,6 @@ function exorcism() {
 
 function activateFreak() {
     freakButton.style.display = "block";
-
 }
 
 // on clicke

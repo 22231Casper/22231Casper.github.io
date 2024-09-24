@@ -25,6 +25,7 @@ var sounds = {
     "prank": new Audio("/audio/funny-prank.mp3"),
     "prank2": new Audio("/audio/bathroom-prank2.mp3"),
     "prank3": new Audio("/audio/bathroom-prank3.mp3"),
+    "vine boom": new Audio("/audio/vine-boom.mp3"),
     "holy": new Audio("/audio/holy.mp3")
 };
 
