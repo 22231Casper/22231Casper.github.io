@@ -47,6 +47,7 @@ function activateFreak() {
     setTimeout(function () {
         boom()
         cappaLicker.src = "/images/Cappa-Licker.png";
+        cappaLicker.style = "width: 100px; height: 50px;"
         navButton.appendChild(cappaLicker);
     }, 100)
 
