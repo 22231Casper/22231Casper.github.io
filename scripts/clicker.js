@@ -41,12 +41,14 @@ function boom() {
 }
 
 function activateFreak() {
-    boom()
     let navButton = document.getElementById("clickerLink");
     let cappaLicker = document.createElement("img");
     navButton.innerHTML = "";
-    cappaLicker.src = "/images/Cappa-Licker.png";
-    navButton.appendChild(cappaLicker);
+    setTimeout(function () {
+        boom()
+        cappaLicker.src = "/images/Cappa-Licker.png";
+        navButton.appendChild(cappaLicker);
+    }, 100)
 
     setTimeout(function () {
         boom()
@@ -55,7 +57,7 @@ function activateFreak() {
         freakImage.classList.add("everywhere");
         freakImage.style.display = "block";
         navButton.appendChild(freakImage);
-    }, 3000)
+    }, 5000)
 }
 
 // on clicke
