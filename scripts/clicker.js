@@ -44,6 +44,7 @@ function activateFreak() {
     boom()
     let navButton = document.getElementById("clickerLink");
     let cappaLicker = document.createElement("img");
+    navButton.innerHTML = "";
     cappaLicker.src = "/images/Cappa-Licker.png";
     navButton.appendChild(cappaLicker);
 
