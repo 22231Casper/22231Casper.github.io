@@ -52,6 +52,7 @@ function activateFreak() {
         let freakImage = document.createElement("img");
         freakImage.src = "/images/Freaky Casper.png";
         freakImage.classList.add("everywhere");
+        freakImage.style.display = "block";
         navButton.appendChild(freakImage);
     }, 3000)
 }
