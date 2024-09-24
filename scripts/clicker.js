@@ -25,15 +25,36 @@ function exorcism() {
         let prankSounds = ["prank", "prank2", "prank3"];
         let prankSound = prankSounds[Math.floor(Math.random()*prankSounds.length)]
         setTimeout(function() {playSound(prankSound); crucifix.style.display = "none";}, 2000);
-        freakLevel += 1;
-        if (freakLevel == 10) {
-            activateFreak();
+        freaky += 1;
+        if (freaky == 10) {
+            showFreak();
         }
     }
 }
 
-function activateFreak() {
+function showFreak() {
     freakButton.style.display = "block";
+}
+
+function boom() {
+    playSound("vine boom");
+}
+
+function activateFreak() {
+    boom()
+    let navButton = document.getElementById("clickerLink");
+    let cappaLicker = document.createElement("img");
+    cappaLicker.src = "/images/Cappa-Licker.png";
+    navButton.innerHTML = cappaLicker;
+
+    setTimeout(function () {
+        boom()
+        let freakImage = document.createElement("img");
+        freakImage.src = "/images/Freaky Casper.png";
+        freakImage.class = "crucifix";
+        freakImage.style = "";
+        document.appendChild(freakImage);
+    }, 3000)
 }
 
 // on clicke
