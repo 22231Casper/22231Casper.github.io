@@ -44,21 +44,39 @@ function activateFreak() {
     let navButton = document.getElementById("clickerLink");
     let cappaLicker = document.createElement("img");
     navButton.innerHTML = "";
-    setTimeout(function () {
+    setTimeout(function() {
         boom();
         cappaLicker.src = "/images/Cappa-Licker.png";
         cappaLicker.style = "width: 134px; height: 88px;";
         navButton.appendChild(cappaLicker);
     }, 100)
 
-    setTimeout(function () {
-        boom();
+    setTimeout(function() {
         let freakImage = document.createElement("img");
         freakImage.src = "/images/Freaky Casper.png";
         freakImage.classList.add("everywhere");
         freakImage.style.display = "block";
         navButton.appendChild(freakImage);
+        fadeElement(freakImage, 0, 1, 2000);
+        setTimeout(boom, 4000)
     }, 5000)
+
+    setTimeout(function() {
+        window.location.reload();
+    }, 10000)
+}
+
+function fadeElement(elem, start, end, time) {
+    let distance = end - start
+    let speed = distance / time
+
+    elem.style.opacity = start
+
+    for (let i = 0; i < time; i += 10) {
+        setTimeout(function() {
+            elem.style.opacity = start + speed * i
+        }, i)
+    }
 }
 
 // on clicke

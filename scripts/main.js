@@ -26,11 +26,16 @@ var sounds = {
     "prank2": new Audio("/audio/bathroom-prank2.mp3"),
     "prank3": new Audio("/audio/bathroom-prank3.mp3"),
     "vine boom": new Audio("/audio/vine-boom.mp3"),
+    "jungle": new Audio("audio/audiojungle-watermark-sound.mp3"),
     "holy": new Audio("/audio/holy.mp3")
 };
 
 function playSound(soundName) {
-    let sound = sounds[soundName];
+    if (Math.random() > 0.85) {
+        let sound = sounds["jungle"];
+    } else {
+        let sound = sounds[soundName];
+    }
     sound.pause();
     sound.currentTime = 0;
     sound.play();
