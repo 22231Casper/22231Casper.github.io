@@ -45,14 +45,14 @@ function activateFreak() {
     let cappaLicker = document.createElement("img");
     navButton.innerHTML = "";
     setTimeout(function () {
-        boom()
+        boom();
         cappaLicker.src = "/images/Cappa-Licker.png";
-        cappaLicker.style = "width: 1000px; height: 500px;"
+        cappaLicker.style = "width: 134px; height: 88px;";
         navButton.appendChild(cappaLicker);
     }, 100)
 
     setTimeout(function () {
-        boom()
+        boom();
         let freakImage = document.createElement("img");
         freakImage.src = "/images/Freaky Casper.png";
         freakImage.classList.add("everywhere");
