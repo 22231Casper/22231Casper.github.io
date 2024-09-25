@@ -41,19 +41,24 @@ function boom() {
 }
 
 function activateFreak() {
-    boom()
     let navButton = document.getElementById("clickerLink");
     let cappaLicker = document.createElement("img");
-    cappaLicker.src = "/images/Cappa-Licker.png";
-    navButton.appendChild(cappaLicker);
+    navButton.innerHTML = "";
+    setTimeout(function () {
+        boom()
+        cappaLicker.src = "/images/Cappa-Licker.png";
+        cappaLicker.style = "width: 1000px; height: 500px;"
+        navButton.appendChild(cappaLicker);
+    }, 100)
 
     setTimeout(function () {
         boom()
         let freakImage = document.createElement("img");
         freakImage.src = "/images/Freaky Casper.png";
-        freakImage.class = "crucifix";
+        freakImage.classList.add("everywhere");
+        freakImage.style.display = "block";
         navButton.appendChild(freakImage);
-    }, 3000)
+    }, 5000)
 }
 
 // on clicke

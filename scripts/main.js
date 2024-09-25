@@ -150,7 +150,7 @@ function buyProducts() {
         playSound("buy");
         let cart = getCart();
         for (let i = 0; i < cart.length; i++) {
-            setTimeout(function() {download(cart[i]);}, 500)
+            setTimeout(function() {download("/images/" + cart[i]);}, 500)
         }
         removeAllFromCart();
     }
@@ -201,7 +201,7 @@ function buyButton() {
 
 function download(file) {
     let element = document.createElement("a");
-    element.setAttribute("href", "/images/" + file);
+    element.setAttribute("href", file);
     element.setAttribute("download", file);
     document.body.appendChild(element);
     element.click();
@@ -324,7 +324,7 @@ function main() {
     console.log("Main is running at " + page);
 
     // Initialise displays
-    holup(CBDisplaysInit)
+    CBDisplaysInit();
     cartNumDisplaysInit();
 
     // Change to preffered mode
@@ -348,14 +348,6 @@ function main() {
             );
         }
     }
-}
-
-function but_one() {
-    alert("bunger one")
-}
-
-function but_two() {
-    alert("ham two")
 }
 
 // Run main
