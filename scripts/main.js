@@ -32,8 +32,7 @@ var sounds = {
 
 function playSound(soundName) {
     let sound = sounds[soundName];
-    if (Math.random() > 0.85) {
-        alert("audio jungle");
+    if (Math.random() > 0.98) {
         sound = sounds["jungle"];
     }
     sound.pause();
