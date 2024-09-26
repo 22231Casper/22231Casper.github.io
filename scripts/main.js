@@ -31,10 +31,9 @@ var sounds = {
 };
 
 function playSound(soundName) {
+    let sound = sounds[soundName];
     if (Math.random() > 0.85) {
-        let sound = sounds["jungle"];
-    } else {
-        let sound = sounds[soundName];
+        sound = sounds["jungle"];
     }
     sound.pause();
     sound.currentTime = 0;
