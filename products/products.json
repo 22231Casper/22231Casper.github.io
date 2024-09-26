@@ -338,7 +338,7 @@
             "link": "niv-meme.html",
             "featured": false,
             "clicks": 0,
-            "new": false,
+            "new": true,
             "popular": false
         }
     ]
