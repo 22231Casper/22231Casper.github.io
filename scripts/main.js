@@ -2,6 +2,7 @@ var CBDisplays;
 var cartNumDisplays;
 var mode = "light";
 var buttonChecks = [];
+var muted = false;
 
 var sounds = {
     "click": new Audio("/audio/Better Clicker Sound.mp3"),
@@ -31,13 +32,15 @@ var sounds = {
 };
 
 function playSound(soundName) {
-    let sound = sounds[soundName];
-    if (Math.random() > 0.98) {
-        sound = sounds["jungle"];
+    if (!muted) {
+        let sound = sounds[soundName];
+        if (Math.random() > 0.98) {
+            sound = sounds["jungle"];
+        }
+        sound.pause();
+        sound.currentTime = 0;
+        sound.play();
     }
-    sound.pause();
-    sound.currentTime = 0;
-    sound.play();
 }
 
 function evilNoise() {

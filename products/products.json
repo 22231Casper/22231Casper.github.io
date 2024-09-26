@@ -333,8 +333,8 @@
         {
             "productName": "Niv Meme",
             "imageName": "Niv Meme.png",
-            "description": "This heavily redacted image features Niv and Casper [REDACTED] eachother at the [REDACTED] during [REDACTED] [REDACTED], photo taken by [REDACTED].",
-            "price": 10000,
+            "description": "This heavily redacted image features Niv and Casper [REDACTED] eachother at the [REDACTED] during [REDACTED] [REDACTED], photo taken by [REDACTED].<br>Why is this image so expensive you may ask?<br>Because it is worth a lot.",
+            "price": 999999999999999,
             "link": "niv-meme.html",
             "featured": false,
             "clicks": 0,
