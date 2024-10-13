@@ -120,18 +120,23 @@ function addToCart(productName) {
     if (cart.length) {
         cartIndex = cart.length;
     }
-    cart[cartIndex] = productName;
-    // Update local storage
-    localStorage.setItem("cart", JSON.stringify(cart));
 
-    let cartPopup = document.getElementById("cartPopup");
-    cartPopup.style.display = "block";
-
-    setTimeout(function() {
-        cartPopup.style.display = "none";
-    }, 6969);
-
-    updateCartNumDisplays();
+    if (cartIndex >= 10) {
+        alert("Too many item in cart :(");
+    } else {
+        cart[cartIndex] = productName;
+        // Update local storage
+        localStorage.setItem("cart", JSON.stringify(cart));
+    
+        let cartPopup = document.getElementById("cartPopup");
+        cartPopup.style.display = "block";
+    
+        setTimeout(function() {
+            cartPopup.style.display = "none";
+        }, 6969);
+    
+        updateCartNumDisplays();
+    }
 }
 
 function removeFromCart(productName) {
