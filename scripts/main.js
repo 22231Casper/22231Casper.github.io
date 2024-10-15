@@ -139,23 +139,6 @@ function addToCart(productName) {
     }
 }
 
-function removeFromCart(productName) {
-    let cart = getCart();
-    let newCart = [];
-    let stillSearching = true
-
-    for (let i = 0; i < cart.length; i++) {
-        if (cart[i] == productName && stillSearching) {
-            stillSearching = false
-            continue;
-        }
-        newCart.push(cart[i]);
-    }
-    localStorage.setItem("cart", JSON.stringify(newCart));
-    updateCartNumDisplays();
-    updateCartDisplay();
-}
-
 function buyProducts() {
     if (check(cartTotal)) {
         changeCB(-cartTotal);
