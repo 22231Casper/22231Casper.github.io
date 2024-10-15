@@ -151,10 +151,6 @@ function buyProducts() {
     }
 }
 
-function holup(call) {
-    setTimeout(call, 500)
-}
-
 function removeAllFromCart() {
     resetCart();
     updateCartDisplay();

@@ -12,6 +12,8 @@
 ::selection {
     background-color: #ffd0ff;
     color: var(--black);
+    animation-name: funny3;
+    animation-duration: 10s;
 }
 
 * {
@@ -530,4 +532,11 @@ button.yarg:hover {
 .box {
     border-radius: 20px;
     border: 5px solid var(--grey);
+}
+
+/* funny */
+@keyframes funny3 {
+    0%{font-size: 1cm;}
+    90%{font-size: 1cm;}
+    100%{font-size: 10vh;}
 }
