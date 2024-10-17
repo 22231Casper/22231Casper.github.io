@@ -10,8 +10,8 @@ function randSlot() {
 
 function slotMachine() {
   //cost;
-  if (getCB() >= 100) {
-    changeCB(-100)
+  if (getCB() >= 500) {
+    changeCB(-500)
     //random start;
     slots = [randSlot(), randSlot(), randSlot()]
     //iterates multiple times;
@@ -34,16 +34,16 @@ function slotMachine() {
         activateCoins();
         setCB(Infinity);
       } else if (slots[1] == slots[2] && slots[2] == slots[0]){
-        changeCB((getCB() * getCB())/1000 + 1000000)
+        changeCB((getCB() * getCB())*0.000000000069 + 100000)
         playSound('prank2')
       } else if (slots[1] == slots[2] || slots[1] == slots[0]){
-        changeCB(getCB()/10 + 100000)
+        changeCB(Math.sqrt(getCB()) + 1000)
         playSound('prank2')
       } else if (slots[0] == slots[2]){
         changeCB(1000)
         playSound('prank2')
       } else if (slots == [0, 0, 0]) {
-        setCB(getCB()/1000)
+        setCB(10)
         playSound('prank1')
       } else {
         playSound('boowomp')
