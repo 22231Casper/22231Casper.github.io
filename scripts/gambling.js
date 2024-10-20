@@ -37,7 +37,7 @@ function slotMachine() {
         changeCB((getCB() * getCB())*0.000000000069 + 100000)
         playSound('prank2')
       } else if (slots[1] == slots[2] || slots[1] == slots[0]){
-        changeCB(Math.sqrt(getCB()) + 1000)
+        changeCB(Math.sqrt(getCB())*2 + 1000)
         playSound('prank2')
       } else if (slots[0] == slots[2]){
         changeCB(1000)
